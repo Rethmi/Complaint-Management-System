@@ -1,0 +1,220 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #e3f2fd, #fffde7);
+    background-attachment: fixed;
+    min-height: 100vh;
+    padding: 2rem 0;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #1e293b;
+}
+
+h1, h2, h3 {
+    color: darkblue;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.success-msg {
+    background: #85cad5;
+    border: 1px solid #51cfe4;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #51cfe4;
+    font-weight: 600;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.65rem 1.4rem;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(to right, #42a5f5, #85cad5);
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0.25rem;
+    font-size: 0.95rem;
+}
+
+.btn:hover {
+    background: linear-gradient(to right, #1e88e5, #51cfe4);
+    transform: scale(1.03);
+}
+
+.delete-link, .btn-delete {
+    background-color: #ef5350;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 0.5rem 1.2rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.delete-link:hover, .btn-delete:hover {
+    background-color: #c62828;
+}
+
+.btn-update {
+    background-color: #29b6f6;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 0.5rem 1.2rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.btn-update:hover {
+    background-color: #0277bd;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 2rem;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+th {
+    background: #bbdefb;
+    color: #0d47a1;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+}
+
+tr:hover {
+    background: #e3f2fd;
+}
+
+.actions-cell {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.priority-high {
+    background: #ffcdd2;
+    color: #c62828;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.priority-medium {
+    background: #ffe082;
+    color: #ef6c00;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.priority-low {
+    background: #c8e6c9;
+    color: #2e7d32;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.status-pending {
+    background: #fff3e0;
+    color: #ef6c00;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.status-resolved {
+    background: #c8e6c9;
+    color: #2e7d32;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.status-rejected {
+    background: #ffcdd2;
+    color: #c62828;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.no-complaints {
+    text-align: center;
+    padding: 3rem;
+    color: #777;
+}
+
+.no-complaints h3 {
+    color: #1565c0;
+    margin-bottom: 1rem;
+}
+
+.stats {
+    margin-top: 2rem;
+    text-align: center;
+    color: #555;
+    font-weight: 500;
+}
+
+.btn-small {
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 1rem;
+        padding: 1rem;
+    }
+
+    table {
+        font-size: 0.85rem;
+    }
+
+    th, td {
+        padding: 0.5rem;
+    }
+
+    .actions-cell {
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+}
