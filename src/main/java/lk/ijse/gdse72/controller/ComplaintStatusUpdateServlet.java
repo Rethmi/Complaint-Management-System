@@ -32,10 +32,8 @@ public class ComplaintStatusUpdateServlet extends HttpServlet {
         boolean updated = complaintDAO.updateComplaintStatus(complaintId,status, complaint.getAssignedTo(), adminRemarks);
 
         if (updated) {
-            System.out.println("Status updated and mark successfully added.");
             resp.sendRedirect(req.getContextPath() + "/view/view-all-complaints.jsp?success=updated");
         } else {
-            System.out.println("Warning: Both status update and mark addition failed");
             resp.sendRedirect(req.getContextPath() + "/view/view-all-complaints.jsp?error=updatefailed");
         }
     }

@@ -81,7 +81,6 @@ public class ComplaintEditServlet extends HttpServlet {
             return;
         }
 
-        // Verify user owns the complaint or is admin (optional)
         if (!complaint.getSubmittedBy().equals(user.getUserId()) && !user.isAdmin()) {
             resp.sendRedirect(req.getContextPath() + "/view/my-complaints.jsp?error=unauthorized");
             return;
@@ -92,15 +91,11 @@ public class ComplaintEditServlet extends HttpServlet {
         complaint.setDepartment(department);
         complaint.setPriority(priority);
 
-        System.out.println("Before Call complaintDAO eke updateComplaint ");
         boolean updated = complaintDAO.updateComplaint(complaint);
-        System.out.println("After Call complaintDAO eke updateComplaint ");
 
         if (updated) {
-            System.out.println("Updated Complaint ..!");
             resp.sendRedirect(req.getContextPath() + "/view/my-complaints.jsp?success=updated");
         } else {
-            System.out.println("Some thing went Wrong in Editing Complaint ...");
 
             req.setAttribute("error", "Failed to update complaint.");
             req.setAttribute("complaint", complaint);
