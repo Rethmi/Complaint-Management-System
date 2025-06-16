@@ -18,14 +18,14 @@ public class ComplaintSubmitServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("GET request received by ComplaintSubmitServlet.");
+//        System.out.println("GET request received by ComplaintSubmitServlet.");
 
         req.getRequestDispatcher("/view/complaint-form.jsp").forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("Complaint submission triggered via doPost().");
+//        System.out.println("Complaint submission triggered via doPost().");
 
         String title = req.getParameter("title");
         String description = req.getParameter("description");
@@ -45,15 +45,15 @@ public class ComplaintSubmitServlet extends HttpServlet {
         complaint.setSubmittedBy(submittedBy);
         complaint.setCreatedAt(LocalDateTime.now());
 
-        System.out.println("before call complainDAO.createComplaint Method ...");
+//        System.out.println("before call complainDAO.createComplaint Method ...");
         boolean saved = complaintDAO.createComplaint(complaint);
-        System.out.println("After call complaintDAO.createComplaint Method ...");
+//        System.out.println("After call complaintDAO.createComplaint Method ...");
 
         if (saved) {
-            System.out.println("saved Complaint ...");
+//            System.out.println("saved Complaint ...");
             resp.sendRedirect(req.getContextPath() + "/view/my-complaints.jsp?success=1");
         } else {
-            System.out.println(" Save Failed Complaint ...");
+//            System.out.println(" Save Failed Complaint ...");
             req.setAttribute("error", "Failed to submit complaint.");
             req.getRequestDispatcher("/view/complaint-form.jsp").forward(req, resp);
         }
