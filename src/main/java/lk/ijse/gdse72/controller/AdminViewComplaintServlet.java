@@ -18,20 +18,20 @@ public class AdminViewComplaintServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-//        System.out.println("AdminViewComplaintServlet GET method triggered");//   the request has reached the AdminViewComplaintServlet's GET method
+
 
         HttpSession session = req.getSession(false);
         if (session == null || session.getAttribute("user") == null) {
-//            System.out.println("Checking if the session is null or not..!");
+
 
             resp.sendRedirect(req.getContextPath() + "/index.jsp");
             return;
         }
 
         try {
-//            System.out.println("Before Call getAllComplaints In complaintDAO ...");
+
             List<ComplaintDTO> complaints = complaintDAO.getAllComplaints();
-//            System.out.println("After Call getAllComplaints In complaintDAO ..." + complaints);
+
 
             req.setAttribute("complaints", complaints);
 
@@ -39,7 +39,7 @@ public class AdminViewComplaintServlet extends HttpServlet {
 
         } catch (RuntimeException e) {
             e.printStackTrace();
-//            System.out.println("Unexpected error occurred. Please check the flow" + e.getMessage());
+
 
             resp.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Unable to load complaints at this time.");
         }

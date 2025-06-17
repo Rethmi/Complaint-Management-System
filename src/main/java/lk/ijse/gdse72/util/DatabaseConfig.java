@@ -9,13 +9,13 @@ public class DatabaseConfig {
 
     static {
         try {
-            // DB Driver & Connection Settings
+
             dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
             dataSource.setUrl("jdbc:mysql://localhost:3306/complaint_management_system");
             dataSource.setUsername("root");
             dataSource.setPassword("Ijse@1234");
 
-            // Pool Settings
+
             dataSource.setInitialSize(5);
             dataSource.setMaxTotal(20);
             dataSource.setMinIdle(5);

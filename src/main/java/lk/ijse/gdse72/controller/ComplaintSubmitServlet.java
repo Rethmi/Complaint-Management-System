@@ -45,15 +45,15 @@ public class ComplaintSubmitServlet extends HttpServlet {
         complaint.setSubmittedBy(submittedBy);
         complaint.setCreatedAt(LocalDateTime.now());
 
-//        System.out.println("before call complainDAO.createComplaint Method ...");
+
         boolean saved = complaintDAO.createComplaint(complaint);
-//        System.out.println("After call complaintDAO.createComplaint Method ...");
+
 
         if (saved) {
-//            System.out.println("saved Complaint ...");
+
             resp.sendRedirect(req.getContextPath() + "/view/my-complaints.jsp?success=1");
         } else {
-//            System.out.println(" Save Failed Complaint ...");
+
             req.setAttribute("error", "Failed to submit complaint.");
             req.getRequestDispatcher("/view/complaint-form.jsp").forward(req, resp);
         }
