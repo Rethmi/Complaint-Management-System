@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<div class="welcome-text">🌟 Welcome Complaint Management System 🌟</div>
+<div class="welcome-text">Welcome Complaint Management System </div>
 <div class="container">
     <h1>Login</h1>
 

@@ -1,4 +1,4 @@
-/* General Reset */
+
 * {
     margin: 0;
     padding: 0;
@@ -21,7 +21,7 @@ body {
 /* Sidebar */
 .sidebar {
     width: 220px;
-    background-color: #1d3557;
+    background-color: #25706d;
     color: white;
     padding: 2rem 1rem;
     flex-shrink: 0;

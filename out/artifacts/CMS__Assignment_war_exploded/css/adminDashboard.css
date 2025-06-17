@@ -14,7 +14,7 @@ body {
 /* Sidebar styles */
 .sidebar {
     width: 250px;
-    background: #2c3e50;
+    background: #25706d;
     color: #ecf0f1;
     padding: 20px;
     display: flex;
@@ -45,7 +45,7 @@ body {
 }
 
 .sidebar a:hover {
-    background-color: #34495e;
+    background-color: #25706d;
 }
 
 /* Content area */
@@ -59,7 +59,7 @@ body {
 /* Default content */
 .content h2 {
     margin-top: 0;
-    color: #2c3e50;
+    color: #25706d;
 }
 
 /* Responsive */

@@ -5,6 +5,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
 import lk.ijse.gdse72.model.ComplaintDAO;
 import lk.ijse.gdse72.model.podos.ComplaintDTO;
+import lk.ijse.gdse72.model.podos.UserDTO;
 
 import java.io.IOException;
 import java.util.List;
@@ -12,23 +13,28 @@ import java.util.List;
 @WebServlet("/employee/my-complaints")
 public class MyComplaintsServlet extends HttpServlet {
 
-    private ComplaintDAO complaintDAO = new ComplaintDAO();
+    private final ComplaintDAO complaintDAO = new ComplaintDAO();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession(false);
+
         if (session == null || session.getAttribute("user") == null) {
             resp.sendRedirect(req.getContextPath() + "/index.jsp");
             return;
         }
 
-        String userId = ((lk.ijse.gdse72.model.podos.UserDTO) session.getAttribute("user")).getUserId();
+        UserDTO loggedUser = (UserDTO) session.getAttribute("user");
+        String userId = loggedUser.getUserId();
 
-        System.out.println("Before Call complainDAO.getComplainByUser: " + userId);
-        List<ComplaintDTO> complaints = complaintDAO.getComplaintsByUser(userId);
-        System.out.println("After Call complaint.getComplaintByUser");
-
-        req.setAttribute("complaints", complaints);
-        req.getRequestDispatcher("/view/my-complaints.jsp").forward(req, resp);
+        try {
+            List<ComplaintDTO> complaints = complaintDAO.getComplaintsByUser(userId);
+            req.setAttribute("complaints", complaints);
+            req.getRequestDispatcher("/view/my-complaints.jsp").forward(req, resp);
+        } catch (Exception e) {
+            e.printStackTrace();
+            req.setAttribute("error", "Failed to load your complaints. Please try again later.");
+            req.getRequestDispatcher("/view/error.jsp").forward(req, resp);
+        }
     }
 }

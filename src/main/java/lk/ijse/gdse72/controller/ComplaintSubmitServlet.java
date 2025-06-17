@@ -18,14 +18,11 @@ public class ComplaintSubmitServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        System.out.println("GET request received by ComplaintSubmitServlet.");
-
-        req.getRequestDispatcher("/view/complaint-form.jsp").forward(req, resp);
+      req.getRequestDispatcher("/view/complaint-form.jsp").forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        System.out.println("Complaint submission triggered via doPost().");
 
         String title = req.getParameter("title");
         String description = req.getParameter("description");
