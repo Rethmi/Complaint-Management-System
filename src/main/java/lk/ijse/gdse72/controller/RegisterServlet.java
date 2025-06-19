@@ -4,7 +4,7 @@ import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
 import lk.ijse.gdse72.model.UserDAO;
-import lk.ijse.gdse72.model.podos.UserDTO;
+import lk.ijse.gdse72.model.pojos.UserDTO;
 import lk.ijse.gdse72.util.IdGenerator;
 import lk.ijse.gdse72.util.ValidationUtil;
 

@@ -4,8 +4,8 @@ import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
 import lk.ijse.gdse72.model.ComplaintDAO;
-import lk.ijse.gdse72.model.podos.ComplaintDTO;
-import lk.ijse.gdse72.model.podos.UserDTO;
+import lk.ijse.gdse72.model.pojos.ComplaintDTO;
+import lk.ijse.gdse72.model.pojos.UserDTO;
 
 import java.io.IOException;
 
